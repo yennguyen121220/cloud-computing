@@ -1,0 +1,88 @@
+====================PROJECT=============
+
+Project Cloud-computing script:
+
+create keyspace project_keyspace with replication = {'class': 'SimpleStrategy', 'replication_factor': '1'} AND durable_writes = 'true';
+
+use project_keyspace;
+
+CREATE TABLE hotels_by_poi (
+	poi_name text PRIMARY KEY,
+	hotel_id text,
+	name text,
+	phone text,
+	address text
+);
+
+insert into hotels_by_poi(poi_name, hotel_id, name, phone, address) values ('services', 'hotel01', 'services','08564112', 'Thu Duc District');
+insert into hotels_by_poi(poi_name, hotel_id, name, phone, address) values ('location', 'hotel02', 'location','085600012', 'Go Vap District');
+insert into hotels_by_poi(poi_name, hotel_id, name, phone, address) values ('views', 'hotel03', 'views','03562788', 'District 9');
+insert into hotels_by_poi(poi_name, hotel_id, name, phone, address) values ('foods', 'hotel04', 'foods','03657675', 'Thao Dien District');
+
+-----
+
+create table hotels (
+	hotel_id text primary key,
+	name text,
+	phone text,
+	address text
+);
+
+insert into hotels (hotel_id, name, phone, address) values ('hotel01', 'Hong Hai Hotel', '08564112', 'Thu Duc District');
+insert into hotels (hotel_id, name, phone, address) values ('hotel02', 'Pascal Hotel', '085600012', 'District Go Vap');
+insert into hotels (hotel_id, name, phone, address) values ('hotel03', 'River Hotel', '03562788', 'District 9');
+insert into hotels (hotel_id, name, phone, address) values ('hotel04', 'Hallway Hotel', '03657675', 'Thao Dien District');
+
+---------
+
+create table pois_by_hotel (
+	hotel_id text primary key,
+	poi_name text,
+	description text
+);
+
+insert into pois_by_hotel (hotel_id, poi_name, description) values ('hotel01', 'services', 'good services');
+insert into pois_by_hotel (hotel_id, poi_name, description) values ('hotel02', 'location', 'quiet place, good to relax');
+insert into pois_by_hotel (hotel_id, poi_name, description) values ('hotel03', 'views', 'beautiful place to take photos');
+insert into pois_by_hotel (hotel_id, poi_name, description) values ('hotel04', 'foods', 'delicious foods');
+
+--------
+create table amenities_by_room (
+	hotel_id text,
+	room_id text,
+	amenity_name text,
+	description text,
+	Primary key (hotel_id, room_id)
+);
+
+insert into amenities_by_room (hotel_id, room_id, amenity_name, description) values ('hotel01', '100', 'air condition', 'air condition 24/24');
+insert into amenities_by_room (hotel_id, room_id, amenity_name, description) values ('hotel01', '101', 'air condition', 'air condition 24/24');
+insert into amenities_by_room (hotel_id, room_id, amenity_name, description) values ('hotel02', '200', 'free wifi', 'always free wifi with strong connection');
+insert into amenities_by_room (hotel_id, room_id, amenity_name, description) values ('hotel02', '201', 'free wifi', 'always free wifi with strong connection');
+insert into amenities_by_room (hotel_id, room_id, amenity_name, description) values ('hotel03', '300', 'free wifi', 'always free wifi with strong connection');
+insert into amenities_by_room (hotel_id, room_id, amenity_name, description) values ('hotel03', '301', 'free wifi', 'always free wifi with strong connection');
+insert into amenities_by_room (hotel_id, room_id, amenity_name, description) values ('hotel04', '400', 'air condition', 'air condition 24/24');
+insert into amenities_by_room (hotel_id, room_id, amenity_name, description) values ('hotel04', '401', 'air condition', 'air condition 24/24');
+
+
+--------
+create table available_rooms_by_hotel_date (
+	hotel_id text,
+	date date,
+	room_number int,
+	is_available boolean,
+	Primary key (hotel_id, date)
+);
+
+insert into available_rooms_by_hotel_date (hotel_id, date, room_number, is_available) values ('hotel01', '2022-04-25', 101, false);
+insert into available_rooms_by_hotel_date (hotel_id, date, room_number, is_available) values ('hotel01', '2022-03-16', 100, false);
+
+insert into available_rooms_by_hotel_date (hotel_id, date, room_number, is_available) values ('hotel02', '2022-04-29', 201, false);
+insert into available_rooms_by_hotel_date (hotel_id, date, room_number, is_available) values ('hotel02', '2022-05-10', 200, true);
+
+insert into available_rooms_by_hotel_date (hotel_id, date, room_number, is_available) values ('hotel03', '2022-05-01', 300, true);
+insert into available_rooms_by_hotel_date (hotel_id, date, room_number, is_available) values ('hotel03', '2022-05-10', 301, true);
+
+insert into available_rooms_by_hotel_date (hotel_id, date, room_number, is_available) values ('hotel04', '2022-04-30', 400, true);
+insert into available_rooms_by_hotel_date (hotel_id, date, room_number, is_available) values ('hotel04', '2022-05-26', 401, false);
+
