@@ -1,6 +1,5 @@
-# Cloud-computing
+# Cloud-computing - Cassandra Cluster on Docker.
 ![](./reports/cloud.webp)
-Final project with cassandra cluster on docker.
 
 ## Overview
 - Get cassandra config from cassandra docker image.
