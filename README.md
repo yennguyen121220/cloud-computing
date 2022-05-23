@@ -1,4 +1,5 @@
 # Cloud-computing
+![](./reports/cloud.webp)
 Final project with cassandra cluster on docker.
 
 ## Overview
