@@ -1,4 +1,4 @@
-# Cloud-computing - Cassandra Cluster on Docker.
+# Cloud computing - Cassandra Cluster on Docker.
 ![](./reports/cloud.webp)
 
 ## Overview
