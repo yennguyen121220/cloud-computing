@@ -12,6 +12,6 @@
 - 18521582 - Tu Nguyen Anh <br/>
 
 ## Video demo
-- Link part 1: 
+- Link part 1: https://drive.google.com/file/d/1q5pIvSNBpcvhrSkih6LnKngdhC4VYzh_/view?usp=sharing <br/>
 - Link part 2: https://drive.google.com/file/d/1mH3kdwuZOltexSjx_Ugbi_WT5LV8ge8J/view?usp=sharing <br/>
 - Link part 3: https://drive.google.com/file/d/10sAyzyXlBdyGtP9WGFuWoPFuLGoFe2U4/view?usp=sharing <br/>
